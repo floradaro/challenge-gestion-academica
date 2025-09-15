@@ -1,0 +1,31 @@
+<odoo>
+    <!-- Es necesario que las acciones estén definidas para cada modelo antes que las vistas -->
+    <!-- Acciones para el modelo de Alumnos -->
+    <record id="action_alumnos" model="ir.actions.act_window">
+        <field name="name">Alumnos</field>
+        <field name="res_model">challenge.alumno</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- Acciones para el modelo de Programas -->
+    <record id="action_programas" model="ir.actions.act_window">
+        <field name="name">Programas</field>
+        <field name="res_model">challenge.programa</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- Acciones para el modelo de Inscripciones -->
+    <record id="action_inscripciones" model="ir.actions.act_window">
+        <field name="name">Inscripciones</field>
+        <field name="res_model">challenge.inscripcion</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- Menú principal del módulo Challenge -->
+    <menuitem id="menu_challenge" name="Challenge"/>
+    <!-- Submenús del módulo Challenge -->
+    <menuitem id="menu_challenge_alumno" name="Alumnos" parent="menu_challenge" action="action_alumnos"/>
+    <menuitem id="menu_challenge_programa" name="Programas" parent="menu_challenge" action="action_programas"/>
+    <menuitem id="menu_challenge_inscripcion" name="Inscripciones" parent="menu_challenge" action="action_inscripciones"/>
+
+</odoo>

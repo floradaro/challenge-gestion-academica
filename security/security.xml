@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Se definen las reglas de seguridad para cada uno de los grupos de usuarios -->
+    <data>
+        <record id="access_user_programa" model="ir.model.access">
+            <field name="name">Acceso de Usuario a Programas</field>
+            <!-- Se define el modelo al que se accede -->
+            <field name="model_id" search="[('model','=','challenge.programa')]" />
+            <!-- Se define el grupo de usuarios que tiene acceso -->
+            <field name="group_id" ref="group_user" />
+            <!-- Se definen los permisos para el grupo de usuarios -->
+            <field name="perm_read" eval="1" />
+            <field name="perm_write" eval="0" />
+            <field name="perm_create" eval="0" />
+            <field name="perm_unlink" eval="0" />
+        </record>
+
+        <record id="access_user_alumno" model="ir.model.access">
+            <field name="name">Acceso de Usuario a Alumnos</field>
+            <field name="model_id" search="[('model','=','challenge.alumno')]" />
+            <field name="group_id" ref="group_user" />
+            <field name="perm_read" eval="1" />
+            <field name="perm_write" eval="0" />
+            <field name="perm_create" eval="0" />
+            <field name="perm_unlink" eval="0" />
+        </record>
+
+        <record id="access_user_inscripcion" model="ir.model.access">
+            <field name="name">Acceso de Usuario a Inscripciones</field>
+            <field name="model_id" search="[('model','=','challenge.inscripcion')]" />
+            <field name="group_id" ref="group_user" />
+            <field name="perm_read" eval="1" />
+            <field name="perm_write" eval="0" />
+            <field name="perm_create" eval="1" />
+            <field name="perm_unlink" eval="0" />
+        </record>
+
+        <record id="access_manager_programa" model="ir.model.access">
+            <field name="name">Acceso de Admin a Programas</field>
+            <field name="model_id" search="[('model','=','challenge.programa')]" />
+            <field name="group_id" ref="group_manager" />
+            <field name="perm_read" eval="1" />
+            <field name="perm_write" eval="1" />
+            <field name="perm_create" eval="1" />
+            <field name="perm_unlink" eval="1" />
+        </record>
+
+        <record id="access_manager_alumno" model="ir.model.access">
+            <field name="name">Acceso de Admin a Alumnos</field>
+            <field name="model_id" search="[('model','=','challenge.alumno')]" />
+            <field name="group_id" ref="group_manager" />
+            <field name="perm_read" eval="1" />
+            <field name="perm_write" eval="1" />
+            <field name="perm_create" eval="1" />
+            <field name="perm_unlink" eval="1" />
+        </record>
+        <record id="access_manager_inscripcion" model="ir.model.access">
+            <field name="name">Acceso de Admin a Inscripciones</field>
+            <field name="model_id" search="[('model','=','challenge.inscripcion')]" />
+            <field name="group_id" ref="group_manager" />
+            <field name="perm_read" eval="1" />
+            <field name="perm_write" eval="1" />
+            <field name="perm_create" eval="1" />
+            <field name="perm_unlink" eval="1" />
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!--Creacion de Grupos de Seguridad-->
+        <record id="module_challenge" model="ir.module.category">
+            <field name="name">Challenge</field>
+            <field name="description">Permisos para el módulo Challenge</field>
+        </record>
+        
+        <record id="group_user" model="res.groups">
+            <field name="name">Usuario</field>
+            <!-- Se agrega al modulo de challenge-->
+            <field name="category_id" ref="module_challenge"/>
+        </record>
+
+        <record id="group_manager" model="res.groups">
+            <field name="name">Administrador</field>
+            <field name="category_id" ref="module_challenge"/>
+            <field name="implied_ids" eval="[(4, ref('group_user'))]"/>
+        </record>
+    </data>
+</odoo>
